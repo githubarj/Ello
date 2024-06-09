@@ -1,10 +1,8 @@
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardMedia,
-  Chip,
   Grid,
   ThemeProvider,
   Typography,
@@ -35,37 +33,50 @@ const ReadingList = () => {
             <img src={BookOpen} alt='' /> Add some books :)
           </Typography>
         ) : (
-          <Grid>
+          <Grid
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '20px',
+              alignItems: 'stretch',
+            }}
+          >
             {list.map((item, index) => (
-              <Box sx={{ maxWidth: 200 }} key={index}>
-                <Card sx={{ mb: 2 }}>
-                  <CardMedia
-                    component='img'
-                    alt='green iguana'
-                    height='140'
-                    image={item.coverPhotoURL}
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant='h6' component='div'>
-                      {item.title}
-                    </Typography>
-                    <Typography variant='body2' color='text.secondary'>
-                      {item.author}
-                    </Typography>
-                  </CardContent>
-                </Card>
-                <Box>
-                  <Chip label={item.readingLevel} />
-                  <Button
-                    size='small'
-                    color='error'
-                    variant='contained'
-                    sx={{ float: 'right' }}
+              <Card
+                sx={{
+                  mb: 2,
+                  maxWidth: 200,
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+                key={index}
+              >
+                <CardMedia
+                  component='img'
+                  alt='green iguana'
+                  height='180'
+                  image={item.coverPhotoURL}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant='h6' component='div'>
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    variant='body2'
+                    color='text.secondary'
+                    sx={{ marginTop: 'auto' }}
                   >
+                    {item.author}
+                  </Typography>
+                </CardContent>
+                {/* <CardActions sx={{ justifyContent: 'space-between' , marginTop: 'auto', }}>
+                  <Chip label={item.readingLevel} />
+                  <Button size='small' color='error' variant='contained'>
                     Remove
                   </Button>
-                </Box>
-              </Box>
+                </CardActions> */}
+              </Card>
             ))}
           </Grid>
         )}
