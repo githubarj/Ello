@@ -1,0 +1,22 @@
+.footer-container {
+    margin-bottom: 20px;
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .avatars {
+                border: 1px solid;
+                cursor: pointer;
+                width: 32;
+                height: 32;
+                -webkit-box-shadow: 2px 4px 0px 0px rgba(83, 194, 194, 1);
+                -moz-box-shadow: 2px 4px 0px 0px rgba(83, 194, 194, 1);
+                box-shadow: 2px 4px 0px 0px rgba(83, 194, 194, 1);
+            }
+        }
+    }
+}
