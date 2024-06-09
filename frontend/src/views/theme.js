@@ -1,24 +1,30 @@
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+export const theme = createTheme({
   typography: {
     fontFamily: 'Mulish, Arial, sans-serif',
   },
-  pallete: {
+  palette: {
     primary: {
-      turqoise: '#5ACCCC',
-      white: '#FFFFFF',
-      steelBlue: '#335C6E',
-      yellow: '#FABD33',
+      main: '#5ACCCC',
+      light: '#FFFFFF',
+      dark: '#335C6E',
+      contrastText: '#FABD33',
     },
     secondary: {
-      turqoiseLight: '#CFFAFA',
-      turqoiseDark1: '#53C2C2',
-      turqoiseDark2: '#28B8B8',
-      orangeRed: '#F76434',
-      orangePastel: '#FFE6DC',
-      teal: '#4AA088',
-      yellowDark: '#FAAD00',
+      light: '#CFFAFA',
+      main: '#53C2C2',
+      dark: '#28B8B8',
+    },
+    error: {
+      main: '#F76434',
+      light: '#FFE6DC',
+    },
+    info: {
+      main: '#4AA088',
+    },
+    warning: {
+      main: '#FAAD00',
     },
   },
 });

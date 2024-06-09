@@ -1,10 +1,11 @@
+import { Outlet } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
     <div>
-      Redirect
+      <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;
