@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-around;
     gap: 60px;
+    margin-bottom: 50px;
 
     .hero-content {
         flex: 2;
@@ -10,7 +11,7 @@
             -webkit-box-shadow: 14px 16px 0px -3px rgba(250, 189, 51, 1);
             -moz-box-shadow: 14px 16px 0px -3px rgba(250, 189, 51, 1);
             box-shadow: 14px 16px 0px -3px rgba(250, 189, 51, 1);
-            border-radius: 100px !important;
+            border-radius: 99px !important;
         }
     }
 

@@ -4,16 +4,14 @@ import {
   redirect,
 } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
-import LandingPage from './views/LandingPage';
 
-const BookAssignment = lazy(() =>
-  import('./views/bookAssignment/index')
-);
+const Layout = lazy(() => import('./views/Layout/index'));
+const BookAssignment = lazy(() => import('./views/bookAssignment/index'));
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <LandingPage />,
+    element: <Layout />,
     children: [
       {
         index: true,

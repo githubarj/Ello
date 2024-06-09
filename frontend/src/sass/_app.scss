@@ -5,9 +5,10 @@ body::-webkit-scrollbar {
     background: transparent;
 }
 
-.pages {
-    height: 100vh;
+.layout {
+    min-height: 100vh;
     display: flex !important;
     flex-direction: column;
     gap: 80px;
+    padding: 0 !important;
 }
