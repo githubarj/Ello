@@ -15,7 +15,12 @@ const ConfirmDelete = ({ open, handleClose, removeItem }) => {
     >
       <Fade in={open}>
         <Box sx={{ p: 3, bgcolor: 'primary.light' }} className='modal-box'>
-          <Typography id='modal-modal-title' variant='h6' component='h2'>
+          <Typography
+            id='modal-modal-title'
+            variant='h6'
+            component='h2'
+            gutterBottom
+          >
             Are you sure you want to remove this book?
           </Typography>
           <Box sx={{ float: 'right' }}>
