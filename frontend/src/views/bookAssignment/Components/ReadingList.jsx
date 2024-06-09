@@ -3,17 +3,24 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Chip,
   Grid,
+  IconButton,
   ThemeProvider,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import theme from '../../theme';
 import { useContext } from 'react';
 import { ListContext } from '..';
 import BookOpen from '../assets/BookOpen.png';
+import { MdDelete } from 'react-icons/md';
 const ReadingList = () => {
-  const { list } = useContext(ListContext);
+  const { list, removeItem } = useContext(ListContext);
 
+  const handleDelete = (index) => {
+    removeItem(index);
+  };
   return (
     <ThemeProvider theme={theme}>
       <Grid className='reading-list'>
@@ -33,50 +40,46 @@ const ReadingList = () => {
             <img src={BookOpen} alt='' /> Add some books :)
           </Typography>
         ) : (
-          <Grid
-            sx={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '20px',
-              alignItems: 'stretch',
-            }}
-          >
+          <Grid container className='cards-list' spacing={2}>
             {list.map((item, index) => (
-              <Card
-                sx={{
-                  mb: 2,
-                  maxWidth: 200,
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-                key={index}
-              >
-                <CardMedia
-                  component='img'
-                  alt='green iguana'
-                  height='180'
-                  image={item.coverPhotoURL}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant='h6' component='div'>
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    variant='body2'
-                    color='text.secondary'
-                    sx={{ marginTop: 'auto' }}
-                  >
-                    {item.author}
-                  </Typography>
-                </CardContent>
-                {/* <CardActions sx={{ justifyContent: 'space-between' , marginTop: 'auto', }}>
-                  <Chip label={item.readingLevel} />
-                  <Button size='small' color='error' variant='contained'>
-                    Remove
-                  </Button>
-                </CardActions> */}
-              </Card>
+              <Grid item key={index} xs={6} sm={4} md={3} lg={3}>
+                <Card className='card'>
+                  <CardMedia
+                    component='img'
+                    alt='Book Cover photo '
+                    height='240'
+                    image={item.coverPhotoURL}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant='h6' component='div'>
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      variant='body2'
+                      color='text.secondary'
+                      sx={{ marginTop: 'auto' }}
+                    >
+                      {item.author}
+                    </Typography>
+                  </CardContent>
+                  <Chip
+                    Filled
+                    label={item.readingLevel}
+                    className='level-chip'
+                    sx={{ bgcolor: 'error.light' }}
+                  />
+                  <Tooltip title='Remove book from list' placement='top'>
+                    <IconButton
+                      aria-label='delete'
+                      className='delete-button'
+                      sx={{ color: 'error.main' }}
+                      onClick={() => handleDelete(index)}
+                    >
+                      <MdDelete />
+                    </IconButton>
+                  </Tooltip>
+                </Card>
+              </Grid>
             ))}
           </Grid>
         )}
