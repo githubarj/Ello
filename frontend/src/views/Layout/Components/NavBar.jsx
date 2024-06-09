@@ -16,7 +16,7 @@ const NavBar = () => {
         <div className='logo-container'>
           <img src={elloSvg} alt='Ello Logo' />
         </div>
-        <Avatar sx={{ bgcolor: 'secondary.dark', cursor: 'pointer' }}>
+        <Avatar sx={{ bgcolor: 'primary.main', cursor: 'pointer' }}>
           <CiUser />
         </Avatar>
       </Grid>

@@ -22,7 +22,7 @@ const Hero = () => {
         <Grid className='hero-content'>
           <Box sx={{ mb: 2 }}>
             <Typography
-              variant='h2'
+              variant='h3'
               sx={{ color: 'primary.dark' }}
               gutterBottom
             >

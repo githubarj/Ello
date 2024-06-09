@@ -1,21 +1,22 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { bookAssignmentService } from '../../../_services/bookAssignmentService';
 import { Autocomplete, TextField } from '@mui/material';
-import { IoSearchOutline } from 'react-icons/io5';
+import { ListContext } from '..';
 
 const SearchBar = () => {
   const [options, setOptions] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { listActions } = useContext(ListContext);
 
   const query = `
-  query {
-    books {
-      title
-      author
-      coverPhotoURL
-      readingLevel
-    }
-  }
+      query {
+         books {
+            title
+            author
+            coverPhotoURL
+            readingLevel
+                }
+            }
 `;
 
   const loadOptions = () => {
@@ -31,13 +32,20 @@ const SearchBar = () => {
         setLoading(false);
       });
   };
+  const handleOptionChange = (e, selectedOption) => {
+    if (selectedOption !== null) {
+      listActions.addItem(selectedOption);
+      console.log(selectedOption);
+    }
+  };
 
   return (
     <Autocomplete
+      size='small'
+      autoHighlight
       onOpen={loadOptions}
-      popupIcon={<IoSearchOutline />}
+      onChange={handleOptionChange}
       disablePortal
-      id='combo-box-demo'
       options={options}
       loading={loading}
       sx={{ width: '80%' }}
