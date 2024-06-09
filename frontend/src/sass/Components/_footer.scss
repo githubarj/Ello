@@ -18,5 +18,9 @@
                 box-shadow: 2px 4px 0px 0px rgba(83, 194, 194, 1);
             }
         }
+        @media (max-width: 576px) {
+            flex-direction: column;
+            gap: 20px;
+        }
     }
 }
