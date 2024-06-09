@@ -48,6 +48,7 @@ const Hero = () => {
                 color: 'black',
                 cursor: 'pointer',
                 borderRadius: '5px',
+                ':hover': { color: 'white' },
               }}
             >
               Current List
