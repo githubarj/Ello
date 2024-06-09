@@ -1,6 +1,6 @@
 import { Avatar, Grid, ThemeProvider } from '@mui/material';
 import { CiUser } from 'react-icons/ci';
-import elloSvg from '../../../public/ello.svg';
+import elloSvg from '../../../../public/ello.svg';
 import theme from '../../theme';
 
 const NavBar = () => {
@@ -14,7 +14,7 @@ const NavBar = () => {
         alignItems='center'
       >
         <div className='logo-container'>
-          <img src={elloSvg} alt='' />
+          <img src={elloSvg} alt='Ello Logo' />
         </div>
         <Avatar sx={{ bgcolor: 'secondary.dark', cursor: 'pointer' }}>
           <CiUser />
