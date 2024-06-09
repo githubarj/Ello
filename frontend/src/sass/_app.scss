@@ -1,3 +1,13 @@
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
 .pages {
     height: 100vh;
+    display: flex !important;
+    flex-direction: column;
+    gap: 80px;
 }
