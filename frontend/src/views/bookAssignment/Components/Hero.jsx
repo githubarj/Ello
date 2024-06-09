@@ -9,7 +9,7 @@ const Hero = () => {
     <ThemeProvider theme={theme}>
       <Grid container className='hero-container'>
         <Grid className='hero-content'>
-          <Box>
+          <Box sx={{mb: 2}} >
             <Typography
               variant='h2'
               sx={{ color: 'primary.dark' }}
@@ -17,7 +17,7 @@ const Hero = () => {
             >
               What book are you looking for ? <PiBookOpenThin />
             </Typography>
-            <Typography variant='caption'>
+            <Typography variant='caption' >
               Explore our catalog and find your students next read.
             </Typography>
           </Box>
