@@ -1,12 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
-import {
-  Avatar,
-  Box,
-  Divider,
-  Grid,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { Avatar, Box, Divider, Grid, Tooltip, Typography } from '@mui/material';
 import {
   PiLinkedinLogoLight,
   PiGithubLogoLight,
@@ -51,7 +44,9 @@ const Footer = () => {
                     borderColor: 'primary.dark',
                   }}
                 >
-                  <a href={item.link} target='blank' >{item.icon}</a>
+                  <a href={item.link} target='blank'>
+                    {item.icon}
+                  </a>
                 </Avatar>
               </Tooltip>
             ))}
