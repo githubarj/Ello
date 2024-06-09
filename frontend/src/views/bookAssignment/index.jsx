@@ -9,20 +9,20 @@ export const ListContext = createContext();
 const BookAssignment = () => {
   const [list, dispatch] = useReducer(listReducer, []);
 
-  const addItem = (item) => {
-    dispatch({ type: 'ADD_ITEM', payload: item });
-  };
-
-  const removeItem = (index) => {
-    dispatch({ type: 'REMOVE_ITEM', index });
-  };
-
-  const resetList = () => {
-    dispatch({ type: 'RESET_LIST' });
+  const listActions = {
+    addItem: (item) => {
+      dispatch({ type: 'ADD_ITEM', payload: item });
+    },
+    removeItem: (index) => {
+      dispatch({ type: 'REMOVE_ITEM', index });
+    },
+    resetList: () => {
+      dispatch({ type: 'RESET_LIST' });
+    },
   };
 
   return (
-    <ListContext.Provider value={{ list, addItem, removeItem, resetList }}>
+    <ListContext.Provider value={{ list, listActions }}>
       <Container sx={{ padding: '0px !important' }}>
         <Hero />
         <ReadingList />

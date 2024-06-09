@@ -6,7 +6,7 @@ import { ListContext } from '..';
 const SearchBar = () => {
   const [options, setOptions] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { addItem } = useContext(ListContext);
+  const { listActions } = useContext(ListContext);
 
   const query = `
       query {
@@ -34,7 +34,7 @@ const SearchBar = () => {
   };
   const handleOptionChange = (e, selectedOption) => {
     if (selectedOption !== null) {
-      addItem(selectedOption);
+      listActions.addItem(selectedOption);
       console.log(selectedOption);
     }
   };

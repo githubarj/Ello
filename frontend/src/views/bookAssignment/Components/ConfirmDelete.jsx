@@ -1,7 +1,7 @@
 import { Box, Button, Fade, Modal, Typography } from '@mui/material';
 
 const ConfirmDelete = ({ open, handleClose, removeItem }) => {
-  const handleDelete = (index) => {
+  const handleDelete = () => {
     removeItem();
     handleClose();
   };

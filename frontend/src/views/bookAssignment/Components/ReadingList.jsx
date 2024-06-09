@@ -18,12 +18,11 @@ import BookOpen from '../assets/BookOpen.png';
 import { MdDelete } from 'react-icons/md';
 import ConfirmDelete from './ConfirmDelete';
 const ReadingList = () => {
-  const { list, removeItem } = useContext(ListContext);
+  const { list, listActions } = useContext(ListContext);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  
   return (
     <ThemeProvider theme={theme}>
       <Grid className='reading-list'>
@@ -85,7 +84,7 @@ const ReadingList = () => {
                     <ConfirmDelete
                       open={open}
                       handleClose={handleClose}
-                      removeItem={() => removeItem(index)}
+                      removeItem={() => listActions.removeItem(index)}
                     />
                   </Card>
                 </Grow>
