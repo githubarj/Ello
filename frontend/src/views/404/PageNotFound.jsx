@@ -1,6 +1,6 @@
 import { Button, Container, ThemeProvider, Typography } from '@mui/material';
 import theme from '../theme';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import error from '../../../public/error-gif.png';
 
 const PageNotFound = () => {
@@ -25,7 +25,11 @@ const PageNotFound = () => {
         <Button
           size='large'
           variant='contained'
-          sx={{ bgcolor: 'primary.contrastText', color: 'black' }}
+          sx={{
+            bgcolor: 'primary.contrastText',
+            color: 'black',
+            ':hover': { color: 'white' },
+          }}
           onClick={async () => navigate('/')}
         >
           Go back to Home
