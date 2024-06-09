@@ -12,9 +12,12 @@ import theme from '../../theme';
 import SearchBar from './SearchBar';
 
 const Hero = () => {
-  //   const handleClick = () => {
-  //     console.log('I have been Clicked');
-  //   };
+    const scrollToHeight = () => {
+      window.scrollTo({
+        top: 390,
+        behavior: 'smooth', // Smooth scrolling
+      });
+    };
 
   return (
     <ThemeProvider theme={theme}>
@@ -39,11 +42,13 @@ const Hero = () => {
             <Button
               variant='contained'
               endIcon={<PiBinocularsLight />}
+              onClick={scrollToHeight}
               sx={{
                 bgcolor: 'warning.main',
                 color: 'black',
                 cursor: 'pointer',
                 borderRadius: '5px',
+                ':hover': { color: 'white' },
               }}
             >
               Current List
