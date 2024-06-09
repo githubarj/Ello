@@ -34,10 +34,9 @@ const SearchBar = () => {
 
   return (
     <Autocomplete
+      size='small'
       onOpen={loadOptions}
-      popupIcon={<IoSearchOutline />}
       disablePortal
-      id='combo-box-demo'
       options={options}
       loading={loading}
       sx={{ width: '80%' }}

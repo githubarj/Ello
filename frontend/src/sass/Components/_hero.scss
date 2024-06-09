@@ -6,12 +6,20 @@
     margin-bottom: 50px;
 
     .hero-content {
-        flex: 2;
+        flex: 4;
         .search-bar {
             -webkit-box-shadow: 14px 16px 0px -3px rgba(250,173,0,1);
             -moz-box-shadow: 14px 16px 0px -3px rgba(250,173,0,1);
             box-shadow: 14px 16px 0px -3px rgba(250,173,0,1);
             border-radius: 99px !important;
+        }
+        .MuiOutlinedInput-root {
+            border-radius: 99px;
+
+        }
+        .MuiFocused, .MuiOutlinedInput-notchedOutline, .MuiInputLabel-root{
+            border-color: #335C6E !important;
+            color: #335C6E !important;
         }
     }
 
