@@ -12,13 +12,13 @@ import theme from '../../theme';
 import SearchBar from './SearchBar';
 
 const Hero = () => {
-//   const handleClick = () => {
-//     console.log('I have been Clicked');
-//   };
+  //   const handleClick = () => {
+  //     console.log('I have been Clicked');
+  //   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container className='hero-container'  >
+      <Grid container className='hero-container'>
         <Grid className='hero-content'>
           <Box sx={{ mb: 2 }}>
             <Typography
@@ -35,15 +35,20 @@ const Hero = () => {
           <Box sx={{ mb: 5 }}>
             <SearchBar />
           </Box>
-          <Box sx={{display: 'flex' , alignItems: 'center', gap: '10px'}} >
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <Button
-              variant='outlined'
+              variant='contained'
               endIcon={<PiBinocularsLight />}
-              sx={{ bgcolor: 'warning.main', color: 'black', cursor: 'pointer' , borderRadius: '5px' }}
+              sx={{
+                bgcolor: 'warning.main',
+                color: 'black',
+                cursor: 'pointer',
+                borderRadius: '5px',
+              }}
             >
               Current List
             </Button>
-            <Divider sx={{ width: '60%', color: 'black'  }} textAlign='left' />
+            <Divider sx={{ width: '60%' }} textAlign='left' />
           </Box>
         </Grid>
         <Grid className='hero-image-div'>
