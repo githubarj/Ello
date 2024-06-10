@@ -4,7 +4,7 @@
 
 ### Front-end
 
-To get access to data that you will use for this challenge you can switch into the `src/frontend` folder and run
+To get the front-end running you can switch to the `src/frontend` folder and run
 
 ```bash
 yarn
