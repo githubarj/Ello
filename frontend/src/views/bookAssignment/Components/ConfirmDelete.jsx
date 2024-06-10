@@ -5,8 +5,10 @@ const ConfirmDelete = ({
   handleClose,
   removeItem,
   handleOpenSnackbar,
+  index
 }) => {
   const handleDelete = () => {
+    console.log(index)
     removeItem();
     handleClose();
     handleOpenSnackbar();

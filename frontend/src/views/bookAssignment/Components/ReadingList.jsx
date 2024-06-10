@@ -18,11 +18,10 @@ import BookOpen from '../assets/BookOpen.png';
 import { MdDelete } from 'react-icons/md';
 import ConfirmDelete from './ConfirmDelete';
 import FeedBack from './FeedBack';
+
 const ReadingList = () => {
   const { list, listActions } = useContext(ListContext);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openItem, setOpenItem] = useState(null); 
   const setOpenRef = useRef(null);
 
   const handleOpenSnackbar = () => {
@@ -30,6 +29,9 @@ const ReadingList = () => {
       setOpenRef.current(true);
     }
   };
+
+  const handleOpen = (id) => () => setOpenItem(id); 
+  const handleClose = () => setOpenItem(null); 
 
   return (
     <ThemeProvider theme={theme}>
@@ -84,16 +86,20 @@ const ReadingList = () => {
                         aria-label='delete'
                         className='delete-button'
                         sx={{ color: 'error.main' }}
-                        onClick={handleOpen}
+                        onClick={handleOpen(item.id)} 
                       >
                         <MdDelete />
                       </IconButton>
                     </Tooltip>
                     <ConfirmDelete
                       handleOpenSnackbar={handleOpenSnackbar}
-                      open={open}
+                      open={openItem === item.id} 
                       handleClose={handleClose}
-                      removeItem={() => listActions.removeItem(index)}
+                      index={item.id}
+                      removeItem={() => {
+                        listActions.removeItem(item.id); 
+                        handleClose();
+                      }}
                     />
                   </Card>
                 </Grow>
