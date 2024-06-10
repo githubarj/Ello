@@ -12,12 +12,12 @@ import theme from '../../theme';
 import SearchBar from './SearchBar';
 
 const Hero = () => {
-    const scrollToHeight = () => {
-      window.scrollTo({
-        top: 390,
-        behavior: 'smooth', // Smooth scrolling
-      });
-    };
+  const scrollToHeight = () => {
+    window.scrollTo({
+      top: 390,
+      behavior: 'smooth', // Smooth scrolling
+    });
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -38,22 +38,19 @@ const Hero = () => {
           <Box sx={{ mb: 5 }}>
             <SearchBar />
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <Box className='hero-content__button'>
             <Button
+              className='list-button'
               variant='contained'
               endIcon={<PiBinocularsLight />}
               onClick={scrollToHeight}
               sx={{
                 bgcolor: 'warning.main',
-                color: 'black',
-                cursor: 'pointer',
-                borderRadius: '5px',
-                ':hover': { color: 'white' },
               }}
             >
               Current List
             </Button>
-            <Divider sx={{ width: '60%' }} textAlign='left' />
+            <Divider sx={{ width: '60%' }} />
           </Box>
         </Grid>
         <Grid className='hero-image-div'>

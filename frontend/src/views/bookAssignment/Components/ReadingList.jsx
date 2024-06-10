@@ -66,7 +66,7 @@ const ReadingList = () => {
                       </Typography>
                     </CardContent>
                     <Chip
-                      Filled
+                      filled
                       label={item.readingLevel}
                       className='level-chip'
                       sx={{ bgcolor: 'error.light' }}

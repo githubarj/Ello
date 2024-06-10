@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-around;
     gap: 60px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     .hero-content {
         flex: 4;
@@ -13,32 +13,48 @@
             box-shadow: 14px 16px 0px -3px rgba(250, 173, 0, 1);
             border-radius: 99px !important;
         }
-        .MuiOutlinedInput-root {
-            border-radius: 99px;
-        }
-        .MuiFocused,
-        .MuiOutlinedInput-notchedOutline,
-        .MuiInputLabel-root {
-            border-color: #335c6e !important;
-            color: #335c6e !important;
+        &__button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            @media (max-width: 576px) {
+                flex-direction: column;
+            }
+            .list-button {
+                color: black;
+                cursor: pointer;
+                border-radius: 5px;
+                &:hover {
+                    color: white;
+                }
+            }
         }
     }
+    .MuiOutlinedInput-root {
+        border-radius: 99px;
+    }
+    .MuiFocused,
+    .MuiOutlinedInput-notchedOutline,
+    .MuiInputLabel-root {
+        border-color: #335c6e !important;
+        color: #335c6e !important;
+    }
+}
 
-    .hero-image-div {
-        flex: 1;
-        img {
-            float: right;
-            -webkit-box-shadow: -34px -33px 0px 0px rgba(90, 204, 204, 1);
-            -moz-box-shadow: -34px -33px 0px 0px rgba(90, 204, 204, 1);
-            box-shadow: -34px -33px 0px 0px rgba(90, 204, 204, 1);
+.hero-image-div {
+    flex: 1;
+    img {
+        float: right;
+        -webkit-box-shadow: -34px -33px 0px 0px rgba(90, 204, 204, 1);
+        -moz-box-shadow: -34px -33px 0px 0px rgba(90, 204, 204, 1);
+        box-shadow: -34px -33px 0px 0px rgba(90, 204, 204, 1);
 
-            width: 100%;
-            border-radius: 20px;
-            border-top-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        @media (max-width: 768px) {
-            display: none;
-        }
+        width: 100%;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    @media (max-width: 768px) {
+        display: none;
     }
 }

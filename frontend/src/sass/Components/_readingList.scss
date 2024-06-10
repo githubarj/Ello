@@ -4,6 +4,9 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
+        @media (max-width: 576px) {
+            flex-direction: column;
+        }
     }
     .cards-list {
         display: flex;

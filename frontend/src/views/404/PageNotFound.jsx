@@ -19,7 +19,7 @@ const PageNotFound = () => {
         <Typography variant='h2' gutterBottom>
           404
         </Typography>
-        <Typography variant='h3' gutterBottom>
+        <Typography variant='h3' sx={{ textAlign: 'center' }} gutterBottom>
           Opps! This Page Does not exist
         </Typography>
         <Button
