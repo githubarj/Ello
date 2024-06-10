@@ -12,16 +12,24 @@ import {
   Typography,
 } from '@mui/material';
 import theme from '../../theme';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { ListContext } from '..';
 import BookOpen from '../assets/BookOpen.png';
 import { MdDelete } from 'react-icons/md';
 import ConfirmDelete from './ConfirmDelete';
+import FeedBack from './FeedBack';
 const ReadingList = () => {
   const { list, listActions } = useContext(ListContext);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const setOpenRef = useRef(null);
+
+  const handleOpenSnackbar = () => {
+    if (setOpenRef.current) {
+      setOpenRef.current(true);
+    }
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -82,6 +90,7 @@ const ReadingList = () => {
                       </IconButton>
                     </Tooltip>
                     <ConfirmDelete
+                      handleOpenSnackbar={handleOpenSnackbar}
                       open={open}
                       handleClose={handleClose}
                       removeItem={() => listActions.removeItem(index)}
@@ -93,6 +102,12 @@ const ReadingList = () => {
           </Grid>
         )}
       </Grid>
+      <FeedBack
+        icon={<MdDelete fontSize='inherit' />}
+        setOpenRef={setOpenRef}
+        message='Book has been removed successfully'
+        severity='warning'
+      />
     </ThemeProvider>
   );
 };

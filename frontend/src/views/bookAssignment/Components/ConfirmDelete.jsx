@@ -1,10 +1,17 @@
 import { Box, Button, Fade, Modal, Typography } from '@mui/material';
 
-const ConfirmDelete = ({ open, handleClose, removeItem }) => {
+const ConfirmDelete = ({
+  open,
+  handleClose,
+  removeItem,
+  handleOpenSnackbar,
+}) => {
   const handleDelete = () => {
     removeItem();
     handleClose();
+    handleOpenSnackbar();
   };
+
   return (
     <Modal
       aria-labelledby='transition-modal-title'
