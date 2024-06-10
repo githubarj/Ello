@@ -15,7 +15,7 @@ const SearchBar = () => {
   const [loading, setLoading] = useState(false);
   const setOpenRef = useRef(null);
 
-  const { listActions, list } = useContext(ListContext);
+  const { listActions } = useContext(ListContext);
 
   const query = `
       query {
@@ -49,15 +49,8 @@ const SearchBar = () => {
 
   const handleOptionChange = (e, selectedOption) => {
     if (selectedOption !== null) {
-      const exists = list.some(function (book) {
-        return book.age === selectedOption.id;
-      });
-      if (exists) {
-        handleOpenSnackbar();
-      } else {
-        listActions.addItem(selectedOption);
-        handleOpenSnackbar();
-      }
+      listActions.addItem(selectedOption);
+      handleOpenSnackbar();
     }
   };
 
